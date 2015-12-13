@@ -1,0 +1,43 @@
+{
+  "author": "Eric B",
+  "source": "https://github.com/Ramorous/puppet-pbis",
+  "summary": "Allows installation, configuration and maintenance of Power Broker Identity Services (PBIS)",
+  "dependencies": [],
+  "license": "Apache-2.0",
+  "name": "Ramorous-pbis",
+  "version": "0.4.0",
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "RedHat",
+      "operatingsystemrelease": ["5","6","7"]
+    },
+    {
+      "operatingsystem": "CentOS",
+      "operatingsystemrelease": ["5","6","7"]
+    },
+    {
+      "operatingsystem": "OracleLinux",
+      "operatingsystemrelease": ["5","6","7"]
+    },
+    {
+      "operatingsystem": "SLES",
+      "operatingsystemrelease": [
+        "10","10 SP1","10 SP2","10 SP3","10 SP4",
+        "11","11 SP1","11 SP2","11 SP3","11 SP4",
+        "12"
+      ]
+    },
+    {
+      "operatingsystem": "Debian",
+      "operatingsystemrelease": ["6","7"]
+    },
+    {
+      "operatingsystem": "Ubuntu",
+      "operatingsystemrelease": ["12","14","15"]
+    }
+  ],
+  "project_page": "https://github.com/Ramorous/puppet-pbis",
+  "issues_url": "https://github.com/Ramorous/puppet-pbis/issues",
+  "requirements": [],
+  "tags": []
+}

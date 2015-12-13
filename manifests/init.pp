@@ -21,10 +21,10 @@ class pbis (
 
   # Download and install the package from the puppetmaster...
   # a low-performance repo for the poor man
-  file { "/opt/${package}":
-    ensure  => file,
-    source  => "puppet:///modules/pbis/${package}",
-  }
+#  file { "/opt/${package}":
+#    ensure  => file,
+#    source  => "puppet:///modules/pbis/${package}",
+#  }
 
   package { 'pbis-open':
     ensure   => installed,

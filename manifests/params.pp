@@ -1,5 +1,8 @@
 class pbis::params {
 
+  # Repository information (repo/package)
+  $package_source        = 'repo'
+
   # domainjoin-cli options
   $ou                    = undef
   $enabled_modules       = undef
@@ -9,7 +12,7 @@ class pbis::params {
   $assume_default_domain = true
   $create_home_dir       = true
   $domain_separator      = '\\'
-  $space_replacement     = '_'
+  $space_replacement     = '^'
   $home_dir_prefix       = '/home'
   $home_dir_umask        = '022'
   $home_dir_template     = '%H/%D/%U'
@@ -19,6 +22,10 @@ class pbis::params {
 
   if !( $::architecture in ['amd64', 'x86_64', 'i386'] ) {
     fail("Unsupported architecture: ${::architecture}.")
+  }
+
+  if $package_source != '/(repo/package)/' {
+    fail("Please define package_source as repo or package. Current: ${package_source}");
   }
 
   # PBIS Open is packaged for Red Hat, Suse, and Debian derivatives.
@@ -31,6 +38,7 @@ class pbis::params {
     '/(RedHat|Suse)/' => "${package_name}.rpm",
     default           => fail("Unsupported operating system: ${::operatingsystem}."),
   }
+  
   $package_provider = $::osfamily ? {
     'Debian'          => 'dpkg',
     '/(RedHat|Suse)/' => 'rpm',
